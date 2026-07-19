@@ -1,0 +1,7 @@
+C:\Users\yusuf\source\repos\Simple-Telnet-Client-Server\TelnetClient\TelnetClient\bin\Debug\TelnetClient.exe.config
+C:\Users\yusuf\source\repos\Simple-Telnet-Client-Server\TelnetClient\TelnetClient\bin\Debug\TelnetClient.exe
+C:\Users\yusuf\source\repos\Simple-Telnet-Client-Server\TelnetClient\TelnetClient\bin\Debug\TelnetClient.pdb
+C:\Users\yusuf\source\repos\Simple-Telnet-Client-Server\TelnetClient\TelnetClient\obj\Debug\TelnetClient.csproj.AssemblyReference.cache
+C:\Users\yusuf\source\repos\Simple-Telnet-Client-Server\TelnetClient\TelnetClient\obj\Debug\TelnetClient.csproj.CoreCompileInputs.cache
+C:\Users\yusuf\source\repos\Simple-Telnet-Client-Server\TelnetClient\TelnetClient\obj\Debug\TelnetClient.exe
+C:\Users\yusuf\source\repos\Simple-Telnet-Client-Server\TelnetClient\TelnetClient\obj\Debug\TelnetClient.pdb

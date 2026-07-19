@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\yusuf\\source\\repos\\Network-Socket-Protocols\\TelnetServer\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{74535AC5-A336-48DD-A975-26713CF9E662}|TelnetServer\\TelnetServer.csproj|c:\\users\\yusuf\\source\\repos\\network-socket-protocols\\telnetserver\\telnetserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{74535AC5-A336-48DD-A975-26713CF9E662}|TelnetServer\\TelnetServer.csproj|solutionrelative:telnetserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\yusuf\\source\\repos\\Network-Socket-Protocols\\TelnetServer\\TelnetServer\\Program.cs",
+              "RelativeDocumentMoniker": "TelnetServer\\Program.cs",
+              "ToolTip": "C:\\Users\\yusuf\\source\\repos\\Network-Socket-Protocols\\TelnetServer\\TelnetServer\\Program.cs",
+              "RelativeToolTip": "TelnetServer\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-19T11:08:26.515Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

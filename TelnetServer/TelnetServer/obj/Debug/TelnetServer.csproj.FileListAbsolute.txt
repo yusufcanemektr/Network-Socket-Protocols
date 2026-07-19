@@ -1,0 +1,14 @@
+C:\Users\yusuf\source\repos\TelnetServer\TelnetServer\bin\Debug\TelnetServer.exe.config
+C:\Users\yusuf\source\repos\TelnetServer\TelnetServer\bin\Debug\TelnetServer.exe
+C:\Users\yusuf\source\repos\TelnetServer\TelnetServer\bin\Debug\TelnetServer.pdb
+C:\Users\yusuf\source\repos\TelnetServer\TelnetServer\obj\Debug\TelnetServer.csproj.AssemblyReference.cache
+C:\Users\yusuf\source\repos\TelnetServer\TelnetServer\obj\Debug\TelnetServer.csproj.CoreCompileInputs.cache
+C:\Users\yusuf\source\repos\TelnetServer\TelnetServer\obj\Debug\TelnetServer.exe
+C:\Users\yusuf\source\repos\TelnetServer\TelnetServer\obj\Debug\TelnetServer.pdb
+C:\Users\yusuf\source\repos\Simple-Telnet-Client-Server\TelnetServer\TelnetServer\bin\Debug\TelnetServer.exe.config
+C:\Users\yusuf\source\repos\Simple-Telnet-Client-Server\TelnetServer\TelnetServer\bin\Debug\TelnetServer.exe
+C:\Users\yusuf\source\repos\Simple-Telnet-Client-Server\TelnetServer\TelnetServer\bin\Debug\TelnetServer.pdb
+C:\Users\yusuf\source\repos\Simple-Telnet-Client-Server\TelnetServer\TelnetServer\obj\Debug\TelnetServer.csproj.AssemblyReference.cache
+C:\Users\yusuf\source\repos\Simple-Telnet-Client-Server\TelnetServer\TelnetServer\obj\Debug\TelnetServer.csproj.CoreCompileInputs.cache
+C:\Users\yusuf\source\repos\Simple-Telnet-Client-Server\TelnetServer\TelnetServer\obj\Debug\TelnetServer.exe
+C:\Users\yusuf\source\repos\Simple-Telnet-Client-Server\TelnetServer\TelnetServer\obj\Debug\TelnetServer.pdb
