@@ -1,27 +1,41 @@
-# Network Socket Protocols (Telnet & SSH)
+# Güvenli Ağ Soket Protokolleri ve Uzaktan Erişim Simülasyonu (C#)
 
-Bu proje, temel ağ protokollerinin çalışma mantığını ve güvenlik farklarını analiz etmek amacıyla **C#** ve **.NET** kullanılarak geliştirilmiş soket (socket) tabanlı istemci ve sunucu uygulamalarını içerir. 
+Bu proje; ağ üzerinden çalışan cihazların uzaktan yönetim protokollerini (Telnet ve SSH) mikro ölçekte simüle eden, modern ağ güvenliği ve kriptografi felsefelerini (AAA Mimarisi, Asimetrik/Simetrik Şifreleme) kod seviyesinde ele alan gelişmiş bir C# konsol uygulamasıdır.
 
-Projenin temel amacı; Telnet protokolünün şifresiz düz metin (Clear text) zafiyetini ve SSH protokolünün asimetrik şifreleme ile sağladığı kriptografik güvenliği **Wireshark** gibi ağ analiz araçları üzerinden uygulamalı olarak test etmektir.
+## 🚀 Projenin Evrimi: Neden ve Ne Değişti?
 
-## 📌 İçerik
-Bu depo 3 farklı konsol uygulamasından oluşmaktadır:
+### ❌ Önceki Sürüm (Temel Soket Mimarisi)
+* **Hard-coded Yapı:** Komutlar sabitti ve esneklik yoktu.
+* **Şifresiz İletişim (Clear-text):** Veriler ağda ham metin olarak dolaşıyordu, güvenlik katmanı yoktu.
+* **Single-Threading:** Sunucu aynı anda yalnızca tek bir istemcinin bağlantısını kabul edebiliyor, diğerleri bekletiliyordu.
+* **Yetersiz Hata Yönetimi:** Beklenmeyen durumlarda uygulama doğrudan çöküyordu.
 
-1. **TelnetServer:** `TcpListener` sınıfı kullanılarak 23. port üzerinden bağlantı kabul eden yerel (localhost) bir test sunucusu.
-2. **TelnetClient:** `TcpClient` ve `NetworkStream` kullanılarak hedef sunucuya ham TCP bağlantısı kuran ve komut ileten istemci.
-3. **SshClientApp:** `SSH.NET` kütüphanesi kullanılarak uzak sunucuyla el sıkışan (handshake) ve komutları şifreli bir tünel (Ciphertext) içerisinden gönderen güvenli istemci.
+### ✅ Yeni Sürüm (Profesyonel Kriptografik Simülasyon)
+* **Hibrit Kriptografi Tüneli:** Bağlantı başında RSA (2048-bit) ile güvenli anahtar takası yapıldıktan sonra tüm oturum AES-256 motoruyla şifrelenir.
+* **AAA Güvenlik Standardı:** 
+  * *Authentication:* Parolalar SHA-256 Hash algoritmalarıyla doğrulanır.
+  * *Authorization:* Misafir ve Yönetici rolleri ayrılmıştır. `enable` komutu ile Cisco cihazlarındakine benzer Privileged EXEC (`#`) moduna geçiş yapılır.
+  * *Accounting:* Tüm istemci eylemleri thread-safe (`lock`) mekanizmasıyla tarih damgası eklenerek `server_activity.log` dosyasına işlenir.
+* **Multi-Threading:** `Task.Run` mimarisi sayesinde sunucu, aynı anda birden fazla istemcinin oturumunu eşzamanlı olarak yönetebilir.
+* **Gerçek Ağ Araçları:** Sunucu makinesi üzerinden hedef IP'lere gerçek ICMP Ping istekleri atılarak TTL ve süre analizleri yapılabilir.
 
-## 🚀 Nasıl Çalıştırılır?
+---
 
-### Telnet Testi (Localhost)
-1. Visual Studio üzerinden önce `TelnetServer` projesini çalıştırın. Sunucu 23. portu dinlemeye başlayacaktır.
-2. Ardından `TelnetClient` projesini çalıştırarak yerel sunucuya komut gönderin.
-3. Arka planda **Wireshark** ile "Adapter for loopback traffic capture" arayüzünü dinleyerek, iletilen paketlerin şifresiz (Clear text) olduğunu gözlemleyebilirsiniz.
+## 🛠️ Sistem Mimarisi ve Bileşenler
 
-### SSH Testi
-1. `SshClientApp` projesini çalıştırın.
-2. Uygulama otomatik olarak genel kullanıma açık bir test sunucusuna (test.rebex.net) bağlanacak ve komut çalıştıracaktır.
-3. Wireshark üzerinden ağ trafiğini dinlediğinizde, Telnet'in aksine tüm paketlerin tamamen şifrelenmiş olduğunu göreceksiniz.
+Proje iki ana bağımsız modülden oluşur:
+1. **NetworkServer (`TelnetServer` klasörü):** İstemci bağlantılarını dinleyen, şifreleme anahtarlarını yöneten ve komut setlerini işleyen çoklu iş parçacıklı sunucu daemon'u.
+2. **NetworkClient (`SshClientApp` klasörü):** Sunucuyla RSA/AES el sıkışması yapan, maskelenmiş parola girişi (`*`) sunan interaktif terminal istemcisi.
 
-## 👨‍💻 Geliştirici
-**Yusuf Can Emektar**
+---
+
+## ⚙️ Kurulum ve Çalıştırma
+
+1. Bu projeyi bilgisayarınıza klonlayın.
+2. Çözüm dosyasını Visual Studio ile açın.
+3. Önce **`NetworkServer`** (TelnetServer) projesine sağ tıklayıp *Debug -> Start New Instance* diyerek sunucuyu başlatın.
+4. Ardından **`NetworkClient`** (SshClientApp) projesini aynı şekilde çalıştırarak istemciyi ayağa kaldırın.
+5. **Giriş Bilgileri:**
+   * Kullanıcı Adı: `admin`
+   * Parola: `123`
+6. Yönetici yetkileri için komut satırına **`enable`** yazıp şifre olarak **`admin123`** girebilirsiniz.
